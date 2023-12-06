@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "27192813127",
+    "project_id": "flutter-projects-35730",
+    "storage_bucket": "flutter-projects-35730.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:27192813127:android:d7bc92cc04e36e77757362",
+        "android_client_info": {
+          "package_name": "com.duvermelo.push_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0oosOZco57fjFBXxrgEqnqf4g1dDf_Cw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
