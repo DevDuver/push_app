@@ -62,7 +62,7 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
 
   void _handleRemoteMessage( RemoteMessage message) {
     if ( message.notification == null ) return;
-    
+
     final notification = PushMessage(
       messageId: message.messageId 
         ?.replaceAll(':', '').replaceAll('%', '')
@@ -104,6 +104,13 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
 
     add(NotificationStatusChanged(settings.authorizationStatus));
     _getFCMToken();
+  }
+
+  PushMessage? getMessageById( String pushMessageId ) {
+    final exits = state.notifications.any((element) => element.messageId == pushMessageId);
+    if ( !exits ) return null;
+
+    return state.notifications.firstWhere((element) => element.messageId == pushMessageId);
   }
 
 }
