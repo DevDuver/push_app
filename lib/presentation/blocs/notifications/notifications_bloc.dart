@@ -60,7 +60,7 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
     print(token);
   }
 
-  void _handleRemoteMessage( RemoteMessage message) {
+  void handleRemoteMessage( RemoteMessage message) {
     if ( message.notification == null ) return;
 
     final notification = PushMessage(
@@ -80,7 +80,7 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
   }
 
   void _onForefroundMessage() {
-    FirebaseMessaging.onMessage.listen(_handleRemoteMessage);
+    FirebaseMessaging.onMessage.listen(handleRemoteMessage);
   }
 
   void _onPushMessageReceived(NotificationReceived event, Emitter<NotificationsState> emit) {
